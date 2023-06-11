@@ -1,0 +1,41 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成活动文件",
+            "command": "C:\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+
+                "-I",
+				"C:\\mingw64\\include", //改成你的gmp.h所在文件夹的路径（一般是在gmp文件夹里）
+				"-L",
+				"C:\\mingw64\\lib",//改成你的libgmp.a静态库所在文件夹的路径（一般在gmp的.libs里）
+
+                "-l", 
+                "gmp",
+                /*"-l",
+                "ssl",
+                "-l",
+                "crypto",*/
+
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        }
+    ],
+    "version": "2.0.0"
+}

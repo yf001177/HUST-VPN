@@ -1,0 +1,39 @@
+{
+  "files.associations": {
+    "stdlib.h": "c",
+    "_link.h": "c",
+    "iostream": "cpp",
+    "new": "cpp",
+    "if_tun.h": "c"
+  },
+  "C_Cpp_Runner.cppCompilerPath": "C:/mingw64/bin/g++.exe",
+  "C_Cpp_Runner.cStandard": "gnu17",
+  "C_Cpp_Runner.cppStandard": "gnu++14",
+  "C_Cpp_Runner.msvcBatchPath": "",
+  "C_Cpp_Runner.warnings": [
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "C_Cpp_Runner.enableWarnings": true,
+  "C_Cpp_Runner.warningsAsError": false,
+  "C_Cpp_Runner.compilerArgs": [],
+  "C_Cpp_Runner.linkerArgs": [],
+  "C_Cpp_Runner.includePaths": [
+    "C:\\mingw64\\include",
+    "C:\\OpenSSL-Win64\\include"
+  ],
+  "C_Cpp_Runner.includeSearch": [
+    "*",
+    "**/*"
+  ],
+  "C_Cpp_Runner.excludeSearch": [
+    "**/build",
+    "**/build/**",
+    "**/.*",
+    "**/.*/**",
+    "**/.vscode",
+    "**/.vscode/**"
+  ],
+  "C_Cpp_Runner.debuggerPath": "C:/mingw64/bin/gdb.exe"
+}
