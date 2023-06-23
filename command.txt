@@ -1,0 +1,26 @@
+cp /usr/lib/ssl/openssl.cnf  openssl.cnf
+openssl req -new -x509 -keyout ca.key -out ca.crt -config openssl.cnf
+openssl genrsa -des3 -out server.key 2048
+openssl req -new -key server.key -out server.csr -config openssl.cnf
+openssl genrsa -des3 -out client.key 2048
+openssl req -new -key client.key -out client.csr -config openssl.cnf
+openssl ca -in server.csr -out server.crt -cert ca.crt -keyfile ca.key -config openssl.cnf
+openssl ca -in client.csr -out client.crt -cert ca.crt -keyfile ca.key -config openssl.cnf
+
+
+sudo docker start HostV
+sudo docker exec -it HostV /bin/bash
+
+sudo docker start HostU
+sudo docker exec -it HostU /bin/bash
+
+sudo docker start HostW
+sudo docker exec -it HostW /bin/bash
+
+date
+date -s "20240801 00:00:00"
+hwclock --hctosys
+
+sudo docker run -it --name=HostW --hostname=HostW --net=extranet --ip=10.0.2.6 --privileged "seedubuntu" /bin/bash
+
+service openbsd openbsd-inetd start
